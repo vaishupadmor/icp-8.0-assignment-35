@@ -12,6 +12,53 @@
     <img src="less-than.png" class="img" onclick="prev()"/>
     <img src="greater-than.png" class="img" onclick="next()"/>
 </div>
+
+<script>
+    const imagesArr =[
+        "./images/one.jpg",
+        "./images/two.jpg",
+        "./images/three.jpg",
+        "./images/four.jpg",
+        "./images/five.jpg",
+        "./images/six.jpg"
+    ];
+
+    let imgIndex = 0;
+
+    
+
+    function prev(){
+        if (imgIndex == 0){
+            imgIndex =images.length -1;
+        }
+
+        else {
+            imgIndex--;
+        }
+
+        const imgelement = document.getElementById("img");
+    
+        imgelement.src = imagesArr[imgIndex]
+    }
+
+
+    function next(){
+        if (imgIndex == imagesArr.length -1){
+            imgIndex =0;
+        }
+
+        else {
+            imgIndex++;
+        }
+
+        const imgelement = document.getElementById("img");
+    
+        imgelement.src = imagesArr[imgIndex]
+    }
+
+    setInterval(next,3000);
+    
+</script>
     
 </body>
 </html>
